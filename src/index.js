@@ -1,17 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+
+import state, {callBack} from './redux/state';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { handleAddPost, handleChangePost } from './redux/state.js';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const renderAllTree = () => {
+  ReactDOM.render(
+    <React.StrictMode>
+      <App data={state} handleAddPost={handleAddPost} handleChangePost={handleChangePost} />
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+  reportWebVitals();
+}
+
+
+renderAllTree()
+callBack(renderAllTree)

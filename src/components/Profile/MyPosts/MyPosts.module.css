@@ -1,0 +1,42 @@
+.myPosts {
+    padding-left: 25px;
+    padding-top: 15px;
+}
+
+.myPosts__title {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.myPosts__title::after {
+    content: "";
+    position: absolute;
+    height: 1px;
+    background-color: black;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+}
+
+.myPosts__creatPostContainer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    height: 100px;
+    justify-content: space-between;
+}
+
+.myPosts__textAreaPost {
+    height: 40px;
+    width: 100%;
+}
+
+.myPosts__addButton {
+    height: 35px;
+    width: 250px;
+}
+
